@@ -11,9 +11,7 @@ var city = "";
 var prevCities = JSON.parse(localStorage.getItem("prevCities") || "[]");
 
 // get weather for searched city
-// display weather for current date and five-day forecast
-// include temperature, humidity, wind speed
-
+// retrieve correct coordinates and then pass back all the weather info correctly converted to be displayed
 function currentWeather(event) {
     event.preventDefault();
     if (citySearch.val().trim() !== "") {
@@ -46,6 +44,8 @@ function currentWeather(event) {
 
 
 }
+// display weather for current date and five-day forecast
+// include temperature, humidity, wind speed
 
 // store cities searched in local storage and display as list
 
