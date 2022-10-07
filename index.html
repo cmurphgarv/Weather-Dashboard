@@ -11,18 +11,16 @@
 </head>
 
 <body>
-    <div class="row justify-content-center text-white bg-info mb-3">
+    <div class="row bg-info justify-content-center col-lg-12 mb-3 text-white">
         <!--Header Here with Weather Dashboard banner-->
         <h1>Weather Dashboard</h1>
     </div>
     <!--Search box to find specific city (left on page)-->
-    <div class="container">
-        <div class="row col-sm-4 bg-light">
-                <section id="searchBar" class="row justify-content-center">
+    <div class="container row">
+        <div class="col-3 justify-content-center bg-light" id="searchBard">
                         <h4>Search for a City:</h4>
                         <input type="search" placeholder="Chicago">
                         <button class="btn btn-secondary" id="search-btn">Search</button>
-                </section>
                 <!--Section for Search History-->
                 <section id="prev-search" class="row justify-content-center">
                     <ul class="prev-cities">
@@ -30,8 +28,22 @@
                     </ul>
                 </section>
         </div>
+        <!--Current Weather Card-->
+        <div class="col-6 justify-content-center" id="currentWeather">
+            <h3 class="cityName mb-1 mt-2 bolder" id="currCity"></h3>
+            <p>Temperature:<span class="current" id="temperature"></span></p>
+            <p>Humidity:<span class="current" id="humidity"></span></p>
+            <p>Wind Speed:<span class="current" id="windSpeed"></span></p>
+        </div>
     </div>
-    <div>
+    <div class="row col-sm-12" id="fiveDays">
+        <h3>5-Day Forecast:</h3>
+        
+
+    </div>
+    
+        
+    
 
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
