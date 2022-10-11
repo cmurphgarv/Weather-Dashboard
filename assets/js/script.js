@@ -2,6 +2,7 @@ var key = "50e0bc3f6f6aa1d991cd91b1bc295f90";
 
 var citySearch = $("#searchBar");
 var searchButton = $("#search-btn");
+var clearButton = $("#clear-btn");
 var currentCity = $("#currCity");
 var currentTemp = $("#temperature");
 var currentHumid = $("#humidity");
@@ -9,19 +10,27 @@ var currentWind = $("#windSpeed");
 var currWeather = $("#currentWeather");
 var fiveDayCard = $("#fiveDays");
 var city = "";
+var listEl = $(".prev-cities");
 //check local storage for any cities previously searched
 var prevCities = JSON.parse(localStorage.getItem("prevCities") || "[]");
 
 // get weather for searched city
 // retrieve correct coordinates and then pass back all the weather info correctly converted to be displayed for current weather
 // call function for 5 day forecast
-function currentWeather(event) {
+function search(event) {
     event.preventDefault();
     if (citySearch.val().trim() !== "") {
-        city = citySearch.val().trim();
+        city = citySearch.val().trim(); 
+        prevCities.unshift(city);
+        localStorage.setItem("prevCities", JSON.stringify(prevCities));
+        searchHistory();
+        currentWeather();
     } else {
         return;
     }
+}
+
+    function currentWeather() {
     var geoUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + key;
     fetch(geoUrl)
         .then(function (response) {
@@ -94,6 +103,32 @@ function fiveDayForecast(lat, lon) {
 }
 
 // store cities searched in local storage and display as list
+function searchHistory() {
+    listEl.html("");
+    prevCities.forEach(c => {
+        listEl.append("<li class = 'list-group-item bg-info text-white my-1'>" + c + "</li>");
+    })
+}
+
+// search from history list
+function reSearch(event) {
+    event.preventDefault();
+    console.log(event);
+    city = event.target.textContent;
+    currentWeather();
+}
+
+// clear history
+
+function clearHistory(event) {
+    event.preventDefault();
+    listEl.html("");
+    localStorage.setItem("prevCities", "[]");
+    prevCities = [];
+}
 
 // event listeners
-searchButton.on("click", currentWeather);
+searchButton.on("click", search);
+listEl.on("click", reSearch);
+clearButton.on("click", clearHistory);
+searchHistory();
