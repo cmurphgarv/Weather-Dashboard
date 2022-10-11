@@ -20,7 +20,10 @@
         <div class="col-3 justify-content-center bg-light">
                         <h4><strong>Search for a City:</strong></h4>
                         <input type="search" placeholder="e.g Chicago" id="searchBar">
-                        <button class="btn btn-secondary" id="search-btn">Search</button>
+                        <div class = "mt-2">
+                            <button class="btn btn-secondary btn-block" id="search-btn">Search</button>
+                        </div>
+                    
                 <!--Section for Search History-->
                 <section id="prev-search" class="row justify-content-center">
                     <ul class="prev-cities">
@@ -29,59 +32,60 @@
                 </section>
         </div>
         <!--Current Weather Card-->
-        <div class="col-6 justify-content-center hidden" id="currentWeather">
+        <div class="col-9 justify-content-start hidden mb-3 border border-dark" id="currentWeather">
             <h3 class="cityName mb-1 mt-2 bolder" id="currCity"></h3>
-            <p>Temperature:<span class="current" id="temperature"></span></p>
-            <p>Humidity:<span class="current" id="humidity"></span></p>
-            <p>Wind Speed:<span class="current" id="windSpeed"></span></p>
+            <p id = "currIcon"></p>
+            <p class = "foreText">Temperature:<span class="current" id="temperature"></span></p>
+            <p class = "foreText">Wind Speed:<span class="current" id="windSpeed"></span></p>
+            <p class = "foreText">Humidity:<span class="current" id="humidity"></span></p>
         </div>
     </div>
     <!--Forecast for Five Days-->
-    <div class="row col-sm-12 justify-content-center hidden" id="fiveDays">
-        <h3>5-Day Forecast:</h3>
-        <div class="card" style="width: 18rem">
+    <div class="row offset-3 justify-content-start hidden" id="fiveDays">
+        <h3 class="mb-2">5-Day Forecast:</h3>
+        <div class="card col-2 mx-2 border border-dark">
             <div class="card-body">
-                <h3 id="forecastDate1"></h3>
-                <p id="forecastImg1"></p>
-                <p>Temperature: <span id="temp1"></span></p>
-                <p>Humidity: <span id="humid1"></span></p>
-                <p>Wind Speed: <span id="wind1"></span></p>
+                <p class = "dateTitle" id="forecastDate1"></p>
+                <p id="forecastIcon1"></p>
+                <p class = "foreText">Temperature: <span id="temp1"></span></p>
+                <p class = "foreText">Wind Speed: <span id="wind1"></span></p>
+                <p class = "foreText">Humidity: <span id="humid1"></span></p>
             </div>
         </div>
-        <div class="card" style="width: 18rem">
+        <div class="card col-2 mx-2 border border-dark">
             <div class="card-body">
-                <h3 id="forecastDate2"></h3>
-                <p id="forecastImg2"></p>
-                <p>Temperature: <span id="temp2"></span></p>
-                <p>Humidity: <span id="humid2"></span></p>
-                <p>Wind Speed: <span id="wind2"></span></p>
+                <p class = "dateTitle" id="forecastDate2"></p>
+                <p id="forecastIcon2"></p>
+                <p class = "foreText">Temperature: <span id="temp2"></span></p>
+                <p class = "foreText">Wind Speed: <span id="wind2"></span></p>
+                <p class = "foreText">Humidity: <span id="humid2"></span></p>
             </div>
         </div>
-        <div class="card" style="width: 18rem">
+        <div class="card col-2 mx-2 border border-dark">
             <div class="card-body">
-                <h3 id="forecastDate3"></h3>
-                <p id="forecastImg3"></p>
-                <p>Temperature: <span id="temp3"></span></p>
-                <p>Humidity: <span id="humid3"></span></p>
-                <p>Wind Speed: <span id="wind3"></span></p>
+                <p class = "dateTitle" id="forecastDate3"></p>
+                <p id="forecastIcon3"></p>
+                <p class = "foreText">Temperature: <span id="temp3"></span></p>
+                <p class = "foreText">Wind Speed: <span id="wind3"></span></p>
+                <p class = "foreText">Humidity: <span id="humid3"></span></p>
             </div>
         </div>
-        <div class="card" style="width: 18rem">
+        <div class="card col-2 mx-2 border border-dark">
             <div class="card-body">
-                <h3 id="forecastDate4"></h3>
-                <p id="forecastImg4"></p>
-                <p>Temperature: <span id="temp4"></span></p>
-                <p>Humidity: <span id="humid4"></span></p>
-                <p>Wind Speed: <span id="wind4"></span></p>
+                <p class = "dateTitle" id="forecastDate4"></p>
+                <p id="forecastIcon4"></p>
+                <p class = "foreText">Temperature: <span id="temp4"></span></p>
+                <p class = "foreText">Wind Speed: <span id="wind4"></span></p>
+                <p class = "foreText">Humidity: <span id="humid4"></span></p>
             </div>
         </div>
-        <div class="card" style="width: 18rem">
+        <div class="card col-2 mx-2 border border-dark">
             <div class="card-body">
-                <h3 id="forecastDate5"></h3>
-                <p id="forecastImg5"></p>
-                <p>Temperature: <span id="temp5"></span></p>
-                <p>Humidity: <span id="humid5"></span></p>
-                <p>Wind Speed: <span id="wind5"></span></p>
+                <p class = "dateTitle" id="forecastDate5"></p>
+                <p id="forecastIcon5"></p>
+                <p class = "foreText">Temperature: <span id="temp5"></span></p>
+                <p class = "foreText">Wind Speed: <span id="wind5"></span></p>
+                <p class = "foreText">Humidity: <span id="humid5"></span></p>
             </div>
         </div>
 

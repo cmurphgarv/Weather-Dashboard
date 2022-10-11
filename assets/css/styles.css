@@ -10,3 +10,12 @@ h1 {
 .hidden {
     display: none;
 }
+
+.dateTitle {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.foreText {
+    font-size: 14px;
+}
