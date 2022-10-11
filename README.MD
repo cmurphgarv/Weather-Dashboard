@@ -6,7 +6,7 @@ Created an online program that searches OpenWeather API to find the current temp
 
 ## Preview 
 
-![Website Preview Image](.assets/images/siteScreenshot.png)
+![Website Preview Image](./assets/images/siteScreenshot.png)
 
 ## Installation
 
